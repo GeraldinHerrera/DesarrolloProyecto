@@ -38,6 +38,17 @@ input {
     border: aliceblue;
 }
 
+
+label{
+    width:100%;
+    height:100%;
+    background-color:aquamarine;
+}
+
+.ofertas{
+    display:contents;
+}
+
 body {
     background-color: #323133;
     margin: 0;

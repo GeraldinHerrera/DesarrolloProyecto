@@ -21,13 +21,10 @@
             <form class="form-inline">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-                 <img  src="https://cdn-icons-png.flaticon.com/32/954/954591.png"/>
+                    <img src="https://cdn-icons-png.flaticon.com/32/954/954591.png" />
                 </button>
             </form>
         </nav>
-        @*  <input class="busca" placeholder="Buscador">
-        
-        </input>*@
     </div>
 
 
@@ -82,6 +79,23 @@
         </li>
     </ul>
 </div>
+<div class="ofertas">
+
+    @{
+
+        string[] imagenes = new string[2];
+        imagenes[0] = "https://images.rappi.com/products/8b0d8c1d-9f94-4143-bda7-ece35d3f2bcb.png";
+        imagenes[1] = "https://images.rappi.com/products/8b0d8c1d-9f94-4143-bda7-ece35d3f2bcb.png";
+        for (int i=0; i < imagenes.Length; i++)
+        {
+                <label id=@i>
+                <img src=@imagenes[i];
+                 >
+                </label>
+        }
+    }
+</div>
+
 
 
 
@@ -144,5 +158,20 @@
     function random(min, max) {
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
+
+    let imagenes = [];
+    imagenes[0].src = 'https://images.rappi.com/products/8b0d8c1d-9f94-4143-bda7-ece35d3f2bcb.png'
+    imagenes[1].src = 'https://images.rappi.com/products/8b0d8c1d-9f94-4143-bda7-ece35d3f2bcb.png'
+    imagenes[2].src = 'https://images.rappi.com/products/8b0d8c1d-9f94-4143-bda7-ece35d3f2bcb.png'
+    imagenes[3].src = 'https://images.rappi.com/products/8b0d8c1d-9f94-4143-bda7-ece35d3f2bcb.png'
+    imagenes[4].src = 'https://images.rappi.com/products/8b0d8c1d-9f94-4143-bda7-ece35d3f2bcb.png'
+    imagenes[5].src = 'https://images.rappi.com/products/8b0d8c1d-9f94-4143-bda7-ece35d3f2bcb.png'
+    imagenes[6].src = 'https://images.rappi.com/products/8b0d8c1d-9f94-4143-bda7-ece35d3f2bcb.png'
+    imagenes[7].src = 'https://images.rappi.com/products/8b0d8c1d-9f94-4143-bda7-ece35d3f2bcb.png'
+    imagenes[8].src = 'https://images.rappi.com/products/8b0d8c1d-9f94-4143-bda7-ece35d3f2bcb.png'
+    imagenes[9].src = 'https://images.rappi.com/products/8b0d8c1d-9f94-4143-bda7-ece35d3f2bcb.png'
+
+
+
 
 </script>
