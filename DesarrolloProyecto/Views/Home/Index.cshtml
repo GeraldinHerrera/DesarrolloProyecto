@@ -1,0 +1,148 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<head>
+    <link rel="stylesheet" href="~/css/Principal.css" />
+</head>
+<div class="header --flex-row-ai!c">
+    <div class="eye">
+        <div class="ball">
+            <div class="stem">
+                <div class="pupil"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="Titulo">
+        <h1>TODO YA!</h1>
+    </div>
+    <div class="buscador">
+        <nav class="navbar navbar-light bg-light">
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                 <img  src="https://cdn-icons-png.flaticon.com/32/954/954591.png"/>
+                </button>
+            </form>
+        </nav>
+        @*  <input class="busca" placeholder="Buscador">
+        
+        </input>*@
+    </div>
+
+
+    <div class="Botones">
+        <div class="btn1">
+            <button onclick="Inicio()">
+                <img src="https://cdn-icons-png.flaticon.com/32/1828/1828504.png" />
+            </button>
+        </div>
+        <div class="btn2">
+            <button>
+                <img src="https://cdn-icons-png.flaticon.com/32/2098/2098544.png" />
+            </button>
+        </div>
+    </div>
+
+
+</div>
+
+<section class="Logo">
+    <figure>
+        <section class="img-bg"></section>
+        <img src="https://vitejs.dev/logo-with-shadow.png" alt="Vite Logo" />
+    </figure>
+</section>
+
+<div class="Categorias">
+    <ul class="menured">
+        <li>
+            <a class="red1"></a>
+            <div>
+                <a href="#">Alimentos</a>
+            </div>
+        </li>
+        <li>
+            <a class="red2"></a>
+            <div>
+                <a href="#">Bebidas</a>
+            </div>
+        </li>
+        <li>
+            <a class="red3"></a>
+            <div>
+                <a href="#">Medicamentos</a>
+            </div>
+        </li>
+        <li>
+            <a class="red4"></a>
+            <div>
+                <a href="#">Aseo</a>
+            </div>
+        </li>
+    </ul>
+</div>
+
+
+
+<script>
+
+    function Inicio() {
+        location.href = '@Url.Action("Login","Home")'
+    }
+
+
+
+    var colors = [
+        "#ED5565",
+        "#FC6E51",
+        "#FFCE54",
+        "#2ECC71",
+        "#4FC1E9",
+        "#8067B7",
+        "#A0D468",
+        "#48CFAD",
+        "#5D9CEC",
+        "#AC92EC",
+        "#EC87C0"
+    ];
+    var previous = 0;
+
+    $(document)
+        .mousemove(function(e) {
+            var x = e.pageX - 50,
+                y = e.pageY - 50,
+                a = Math.PI - Math.atan2(x, y),
+                p = Math.sqrt(x * x + y * y),
+                m = Math.sqrt(
+                    ($(window).width() - 50) * ($(window).width() - 50) +
+                    ($(window).height() - 50) * ($(window).height() - 50)
+                );
+            $(".stem").css("transform", `translate(-50%,-50%) rotate(${a}rad)`);
+            $(".stem").css("height", `${(p * 35) / m}px`);
+            $(".pupil")
+                .css("height", `${12.5 - (p * 3) / m}px`)
+                .css("width", `${12.5 - (p * 3) / m}px`);
+        })
+        .mouseleave(function(e) {
+            $(".stem").css("height", `0px`);
+            $(".pupil").css("height", `12.5px`).css("width", `12.5px`);
+        });
+
+    $(".ball").click(function() {
+        var r = random(0, colors.length - 1);
+        while (r == previous) {
+            r = random(0, colors.length - 1);
+        }
+        previous = r;
+        var c = colors[r];
+        $(".eye")
+            .append(`<div class="skin" style="background-color:${c};"></div>`)
+            .css("background-color", c);
+    });
+
+    function random(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+</script>
