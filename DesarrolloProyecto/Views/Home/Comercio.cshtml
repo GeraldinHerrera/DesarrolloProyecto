@@ -1,0 +1,241 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@{
+    ViewData["Title"] = "Home Page";
+}
+<head>
+    <link rel="stylesheet" href="~/css/Principal.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<div class="header --flex-row-ai!c">
+    <div class="eye">
+        <div class="ball">
+            <div class="stem">
+                <div class="pupil"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="Titulo">
+        <p>Ingresar mi ubicacion</p>
+        <img  class="ubi"  src="https://cdn-icons-png.flaticon.com/32/1483/1483336.png" />
+    </div>
+    <div class="buscador">
+        <nav class="navbar navbar-light bg-light">
+            <form class="form-inline" style="margin-top:-3%;">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                    <img src="https://cdn-icons-png.flaticon.com/32/954/954591.png" />
+                </button>
+            </form>
+        </nav>
+    </div>
+
+
+    <div class="Botones">
+        <div class="btn1">
+            <label id="kl" style="color: white;"></label>
+            <button onclick="Inicio()">
+                <img src="https://cdn-icons-png.flaticon.com/32/1828/1828504.png" />
+            </button>
+        </div>
+        <div class="btn2">
+            <button>
+                <img src="https://cdn-icons-png.flaticon.com/32/2098/2098544.png" />
+            </button>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="eslogan">
+    <div class="cssFont_1" style="font-family:'Pacifico', cursive">!TODO YA !</div>
+    <pc class="logan">Corremos por ti</pc>
+</div>
+
+
+<section class="Logo">
+    <figure>
+        <section class="img-bg"></section>
+        <img src="https://vitejs.dev/logo-with-shadow.png" alt="Vite Logo" />
+    </figure>
+</section>
+
+<div class="Categorias">
+    <ul class="menured">
+        <li>
+            <a class="red1"></a>
+            <div>
+                <button class="btn1" onclick="alimentos()">Alimentos</button>
+            </div>
+        </li>
+        <li>
+            <a class="red2"></a>
+            <div>
+                <button onclick="Bebidas()">Bebidas</button>
+            </div>
+        </li>
+        <li>
+            <a class="red3"></a>
+            <div>
+                <button onclick="Medicamentos()">Medicamentos</button>
+            </div>
+        </li>
+        <li>
+            <a class="red4"></a>
+            <div>
+                <button onclick="Aseo()">Aseo</button>
+            </div>
+        </li>
+    </ul>
+</div>
+<section>
+    <div class="ofertas" id="ofertas">
+     
+
+    </div>
+</section>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+
+
+
+    var colors = [
+        "#ED5565",
+        "#FC6E51",
+        "#FFCE54",
+        "#2ECC71",
+        "#4FC1E9",
+        "#8067B7",
+        "#A0D468",
+        "#48CFAD",
+        "#5D9CEC",
+        "#AC92EC",
+        "#EC87C0"
+    ];
+    var previous = 0;
+    
+    var imagenes = [
+        'https://images.rappi.com/products/8b0d8c1d-9f94-4143-bda7-ece35d3f2bcb.png',
+        'https://fullersoluciones.com/wp-content/uploads/2022/10/arroz-5kilos.png',
+        'https://compost-on.com/wp-content/uploads/2019/04/Qu%C3%A9-es-un-mercado-org%C3%A1nico-y-mercado-verde-en-M%C3%A9xico.jpg',
+        'https://cdn.miaguila.com/images/alkosto/7702085016022.jpg',
+        'https://cdn.shopify.com/s/files/1/0492/2458/1274/products/supermercados_la_vaquita_supervaquita_oferta_coca_cola_nr_3l___sprite_3l_bebidas_liquidas_700x700.jpg?v=1621963627',
+        'https://assets.cybermonday.com.ar/uploads/offers/259516/1666620278_ft6105140013.jpg?w=500&h=375',
+        'https://w7.pngwing.com/pngs/955/676/png-transparent-coca-cola-fizzy-drinks-cafe-coffee-combo-offer.png',
+        'https://assets.hotsale.com.ar/uploads/offers/242280/628fdef9ea71f.jpg?w=500&h=375'
+
+    ]
+
+    var titulos=[
+        'Cerveza Poker Lata 330ml - $10.000',
+        'Arroz Doña Pepa - $13.900',
+        'Combo Verduras - $25.000',
+        'Spaghetti Doria 1000g X3 - $17.900',
+        'Gaseosa CocaCola x2 - $13.650',
+        'Cerveza Corona - $15.750',
+        'Combo Comida - $5.000',
+        'Botellas Vino - $30.000'
+
+    ]
+
+    console.log(titulos[0]);
+    var div = document.getElementById("ofertas");
+    //var tit = document.createElement("h2");
+    //tit.textContent ="OFERTAS";
+    //tit.className = "tituloh2";
+
+ 
+    for (var i = 0; i < imagenes.length; i++) {
+        console.log(i);
+        var div2 = document.createElement("div");
+        var img = document.createElement("img");
+        img.className = "imagenes";
+        img.src = imagenes[i];
+ 
+
+        div2.className="titulosDiv";
+        var p = document.createElement("p");
+        p.className="claseP";
+        p.innerHTML= titulos[i];
+        div2.appendChild(img);
+        div2.appendChild(p);
+        div.appendChild(div2);
+        //div.appendChild(tit);
+      
+    
+
+    document.getElementById("kl").innerHTML = localStorage.user;
+
+    }
+
+    function alimentos(){
+
+        $('.titulosDiv').css({
+           display:'none'
+        })
+
+        //$('.titulosDivA').css({
+        //    display: 'block'
+        //})
+
+        var imagenesA = [
+            'https://admin.consumo.com.co/backend/admin/backend/web/archivosDelCliente/items/images/20200730082242-Cuidado-Personal-Cuidado-del-Bebe-COMPOTA-RESPIN-X-113-GR-MANGO-328202007300822425606.jpg',
+            'https://mercasmart.com/wp-content/uploads/2020/06/7707309250138.-LENTEJA-SEDESPENSA-X-500-GR-5-1.jpg',
+            'https://exitocol.vtexassets.com/arquivos/ids/13174716/Arroz-Diana-1000-gr-552155_a.jpg?v=1754275169',
+            'https://vaquitaexpress.com.co/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/7/7/7702020050005.jpg',
+            'https://vaquitaexpress.com.co/media/catalog/product/cache/1/small_image/350x350/9df78eab33525d08d6e5fb8d27136e95/7/7/7701101233207.jpg',
+            'https://vaquitaexpress.com.co/media/catalog/product/cache/1/small_image/350x350/9df78eab33525d08d6e5fb8d27136e95/7/7/7702020216036.jpg'
+
+        ]
+
+        var titulosA = [
+            'Compota Respin Frutas Mixtas - $2.390',
+            'Lenteja de su Despensa  - $3.190',
+            'Arroz Dina 3000 gr - $13.390',
+            'Aceite de Canola - $22.400',
+            'Arvejas Enlatadas x 300gr - $3.780',
+            'Harina Galletas Haz Oros Chio - $7.230'
+
+        ]
+
+        console.log(titulosA[0]);
+        var div = document.getElementById("ofertas");
+
+        for (var i = 0; i < imagenesA.length; i++) {
+            console.log(i);
+            var div2a = document.createElement("div");
+            var imgA = document.createElement("img");
+            imgA.className = "imagenesA";
+            imgA.src = imagenesA[i];
+
+
+            div2a.className = "titulosDivA";
+            var pA = document.createElement("p");
+            pA.className = "clasePa";
+            pA.innerHTML = titulosA[i];
+            div2a.appendChild(imgA);
+            div2a.appendChild(pA);
+            div.appendChild(div2a);
+
+
+
+            document.getElementById("kl").innerHTML = localStorage.user;
+
+        }
+
+
+        
+       
+    }
+
+</script>

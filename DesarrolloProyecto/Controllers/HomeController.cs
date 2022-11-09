@@ -25,7 +25,13 @@ namespace DesarrolloProyecto.Controllers
 
         public IActionResult Login()
         {
-            return View(Login);
+            return View();
         }
+        public IActionResult Comercio()
+        {
+            return View();
+        }
+
+
     }
 }

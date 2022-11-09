@@ -8,10 +8,39 @@
     <link  rel=" stylesheet" href="~/css/EstilosLogin.css"/>
 </head>
 <div class="login">
-  <h1>TODO YA!</h1>
-  <form method="post">
-    <input type="text" name="u" placeholder="Nombre" required="required" />
-    <input type="password" name="p" placeholder="Contraseña" required="required" />
-    <button type="submit" class="btn btn-primary btn-block btn-large">Ingresar</button>
-  </form>
+  <h1>LOGIN TODO YA!</h1>
+
+    <input type="text" name="u" placeholder="Nombre" required="required" id="name" />
+    <input type="password" name="p" placeholder="Contraseña" required="required" id="pass" />
+    <button  class="btn btn-primary btn-block btn-large" onclick="poker()">Ingresar</button>
+
 </div>
+
+
+
+<script>
+
+    var user = "geral24";
+    var contraseña = "1234";
+    localStorage.user = "Bienvenida Geraldin Herrera";
+
+
+
+
+ 
+ 
+
+
+
+    function poker(){
+        var val = document.getElementById("name").value;
+        var pass = document.getElementById("pass").value;
+        if(val== user && pass== contraseña){
+            window.location.replace("Comercio");
+        }else{
+            alert("Datos Invalidos");
+        }
+    }
+
+
+</script>

@@ -3,6 +3,9 @@
 }
 <head>
     <link rel="stylesheet" href="~/css/Principal.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <div class="header --flex-row-ai!c">
     <div class="eye">
@@ -14,11 +17,12 @@
     </div>
 
     <div class="Titulo">
-        <h1>TODO YA!</h1>
+        <p>Ingresar mi ubicacion</p>
+        <img class="ubi" src="https://cdn-icons-png.flaticon.com/32/1483/1483336.png" />
     </div>
     <div class="buscador">
         <nav class="navbar navbar-light bg-light">
-            <form class="form-inline">
+            <form class="form-inline" style="margin-top:-3%;">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
                     <img src="https://cdn-icons-png.flaticon.com/32/954/954591.png" />
@@ -30,6 +34,7 @@
 
     <div class="Botones">
         <div class="btn1">
+            <label id="kl" style="color: white;"></label>
             <button onclick="Inicio()">
                 <img src="https://cdn-icons-png.flaticon.com/32/1828/1828504.png" />
             </button>
@@ -44,6 +49,12 @@
 
 </div>
 
+<div class="eslogan">
+    <div class="cssFont_1" style="font-family:'Pacifico', cursive">!TODO YA !</div>
+    <pc class="logan">Corremos por ti</pc>
+</div>
+
+
 <section class="Logo">
     <figure>
         <section class="img-bg"></section>
@@ -56,57 +67,48 @@
         <li>
             <a class="red1"></a>
             <div>
-                <a href="#">Alimentos</a>
+                <button class="btn1" onclick="alimentos()">Alimentos</button>
             </div>
         </li>
         <li>
             <a class="red2"></a>
             <div>
-                <a href="#">Bebidas</a>
+                <button onclick="Bebidas()">Bebidas</button>
             </div>
         </li>
         <li>
             <a class="red3"></a>
             <div>
-                <a href="#">Medicamentos</a>
+                <button onclick="Medicamentos()">Medicamentos</button>
             </div>
         </li>
         <li>
             <a class="red4"></a>
             <div>
-                <a href="#">Aseo</a>
+                <button onclick="Aseo()">Aseo</button>
             </div>
         </li>
     </ul>
 </div>
-<div class="ofertas">
+<section>
+    <div class="ofertas" id="ofertas">
+        <h1>Inicia sesion Para ver tus productos</h1>
+    </div>
 
-    @{
+ 
+</section>
+ 
 
-        string[] imagenes = new string[2];
-        imagenes[0] = "https://images.rappi.com/products/8b0d8c1d-9f94-4143-bda7-ece35d3f2bcb.png";
-        imagenes[1] = "https://images.rappi.com/products/8b0d8c1d-9f94-4143-bda7-ece35d3f2bcb.png";
-        for (int i=0; i < imagenes.Length; i++)
-        {
-                <label id=@i>
-                <img src=@imagenes[i];
-                 >
-                </label>
-        }
-    }
-</div>
 
 
 
 
 <script>
 
+
     function Inicio() {
         location.href = '@Url.Action("Login","Home")'
     }
-
-
-
     var colors = [
         "#ED5565",
         "#FC6E51",
@@ -122,54 +124,28 @@
     ];
     var previous = 0;
 
-    $(document)
-        .mousemove(function(e) {
-            var x = e.pageX - 50,
-                y = e.pageY - 50,
-                a = Math.PI - Math.atan2(x, y),
-                p = Math.sqrt(x * x + y * y),
-                m = Math.sqrt(
-                    ($(window).width() - 50) * ($(window).width() - 50) +
-                    ($(window).height() - 50) * ($(window).height() - 50)
-                );
-            $(".stem").css("transform", `translate(-50%,-50%) rotate(${a}rad)`);
-            $(".stem").css("height", `${(p * 35) / m}px`);
-            $(".pupil")
-                .css("height", `${12.5 - (p * 3) / m}px`)
-                .css("width", `${12.5 - (p * 3) / m}px`);
-        })
-        .mouseleave(function(e) {
-            $(".stem").css("height", `0px`);
-            $(".pupil").css("height", `12.5px`).css("width", `12.5px`);
-        });
+   
 
-    $(".ball").click(function() {
-        var r = random(0, colors.length - 1);
-        while (r == previous) {
-            r = random(0, colors.length - 1);
-        }
-        previous = r;
-        var c = colors[r];
-        $(".eye")
-            .append(`<div class="skin" style="background-color:${c};"></div>`)
-            .css("background-color", c);
-    });
 
-    function random(min, max) {
-        return Math.floor(Math.random() * (max - min + 1) + min);
-    }
+        var imagenes =[
+       'https://images.rappi.com/products/8b0d8c1d-9f94-4143-bda7-ece35d3f2bcb.png',
+       'https://assets-prod.blackfridaycol.com/accounts/3/events/6/editions/12/promotions/59595/media/2f39bd9b-ad70-4921-b17b-2e150c6ff257.png',
+        'https://compost-on.com/wp-content/uploads/2019/04/Qu%C3%A9-es-un-mercado-org%C3%A1nico-y-mercado-verde-en-M%C3%A9xico.jpg',
+        'https://i.ebayimg.com/thumbs/images/g/74YAAOSwb6NiD0a3/s-l300.jpg'
+        ]
+    console.log(imagenes[0]);
+      
+      //var div= document.getElementById("ofertas");
+      // for (var i = 0; i < imagenes.length; i++)
+      //  {
+      //      console.log(i);
+      //    var img = document.createElement("img");
+      //    img.src= imagenes[i];
+      //    div.appendChild(img);
+      //  }
 
-    let imagenes = [];
-    imagenes[0].src = 'https://images.rappi.com/products/8b0d8c1d-9f94-4143-bda7-ece35d3f2bcb.png'
-    imagenes[1].src = 'https://images.rappi.com/products/8b0d8c1d-9f94-4143-bda7-ece35d3f2bcb.png'
-    imagenes[2].src = 'https://images.rappi.com/products/8b0d8c1d-9f94-4143-bda7-ece35d3f2bcb.png'
-    imagenes[3].src = 'https://images.rappi.com/products/8b0d8c1d-9f94-4143-bda7-ece35d3f2bcb.png'
-    imagenes[4].src = 'https://images.rappi.com/products/8b0d8c1d-9f94-4143-bda7-ece35d3f2bcb.png'
-    imagenes[5].src = 'https://images.rappi.com/products/8b0d8c1d-9f94-4143-bda7-ece35d3f2bcb.png'
-    imagenes[6].src = 'https://images.rappi.com/products/8b0d8c1d-9f94-4143-bda7-ece35d3f2bcb.png'
-    imagenes[7].src = 'https://images.rappi.com/products/8b0d8c1d-9f94-4143-bda7-ece35d3f2bcb.png'
-    imagenes[8].src = 'https://images.rappi.com/products/8b0d8c1d-9f94-4143-bda7-ece35d3f2bcb.png'
-    imagenes[9].src = 'https://images.rappi.com/products/8b0d8c1d-9f94-4143-bda7-ece35d3f2bcb.png'
+ 
+
 
 
 
