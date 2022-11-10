@@ -45,7 +45,7 @@
             </button>
         </div>
         <div class="btn2">
-            <button>
+            <button onclick="Compras()">
                 <img src="https://cdn-icons-png.flaticon.com/32/2098/2098544.png" />
             </button>
         </div>
@@ -78,7 +78,7 @@
         <li>
             <a class="red2"></a>
             <div>
-                <button onclick="Bebidas()">Bebidas</button>
+                <button onclick="bebidas()">Bebidas</button>
             </div>
         </li>
         <li>
@@ -236,6 +236,64 @@
 
         
        
+    }
+
+    function bebidas(){
+        $('.titulosDiv').css({
+           display:'none'
+        })
+
+        //$('.titulosDivA').css({
+        //    display: 'block'
+        //})
+
+        var imagenesB = [
+            'https://exitocol.vtexassets.com/arquivos/ids/9000303-1200-auto?v=637618189624770000&width=1200&height=auto&aspect=true',
+            'https://exitocol.vtexassets.com/arquivos/ids/13173851/Malta-Mini-Sixpack-X-200-Ml-Cu-444826_a.jpg?v=1754366928',
+            'https://exitocol.vtexassets.com/arquivos/ids/2661515-800-auto?v=637305767346200000&width=800&height=auto&aspect=true',
+            'https://exitocol.vtexassets.com/arquivos/ids/13173904-800-auto?v=637899411527530000&width=800&height=auto&aspect=true',
+            'https://exitocol.vtexassets.com/arquivos/ids/15176000-800-auto?v=638018802442100000&width=800&height=auto&aspect=true',
+            'https://exitocol.vtexassets.com/arquivos/ids/12313014/VINO-LAMBRUSCO-ROSADO-1603307_a.jpg?v=1754344234'
+
+        ]
+
+        var titulosB = [
+            'Coctel Gold - $12.500',
+            'SixPack PonyMalta - $5.391',
+            'Refresco Mango Tetrapak - $3.072',
+            'Bebida de Coco - $12.000',
+            'Bebida Energizante - $5.643',
+            'Vino - $25.000'
+
+        ]
+
+        console.log(titulosB[0]);
+        var div = document.getElementById("ofertas");
+
+        for (var i = 0; i < imagenesB.length; i++) {
+            console.log(i);
+            var div2b = document.createElement("div");
+            var imgB = document.createElement("img");
+            imgB.className = "imagenesB";
+            imgB.src = imagenesB[i];
+
+
+            div2b.className = "titulosDivB";
+            var pB = document.createElement("p");
+            pB.className = "clasePa";
+            pB.innerHTML = titulosB[i];
+            div2b.appendChild(imgB);
+            div2b.appendChild(pB);
+            div.appendChild(div2b);
+
+
+
+        }
+    }
+
+    function Compras(){
+        alert("Entro");
+     window.location.replace("Compras");
     }
 
 </script>
