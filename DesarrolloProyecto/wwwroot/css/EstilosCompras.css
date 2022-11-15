@@ -66,19 +66,19 @@ body {
                 font-size: 6rem;
             }
 
-            .pricing-table .card:nth-child(1) .buy-button, .pricing-table .card:nth-child(3) .buy-button {
+           /* .pricing-table .card:nth-child(1) .buy-button, .pricing-table .card:nth-child(3) .buy-button {
                 width: 230px;
                 height: 170px;
-            }
+            }*/
 
                 .pricing-table .card:nth-child(1) .buy-button h3, .pricing-table .card:nth-child(3) .buy-button h3 {
                     top: 12%;
-                    left: 10%;
+                    left: 32%;
                     font-size: 1rem;
                 }
 
         .pricing-table .card .type {
-            margin-top: -14px;
+            margin-top: -12px;
             letter-spacing: 0.1rem;
             FONT-SIZE: 34px;
         }
@@ -152,13 +152,14 @@ body {
         .pricing-table .card .buy-button {
             cursor: pointer;
             position: absolute;
-            width: 250px;
-            height: 180px;
+            width: 205px;
+            height: 54px;
             background: #fff;
-            border-radius: 15%;
+ 
             right: -2%;
-            bottom: -16%;
+            bottom: -1%;
             transition: all 0.4s ease-in-out;
+            border-radius: 7px;
         }
 
             .pricing-table .card .buy-button h3 {
@@ -190,16 +191,59 @@ body {
                 right: -90%;
             }
 
-            .pricing-table .card:hover .buy-button {
+           /* .pricing-table .card:hover .buy-button {
                 width: 100%;
                 right: 0%;
                 border-radius: 0%;
             }
-
+*/
                 .pricing-table .card:hover .buy-button h3 {
                     left: 50%;
                     transform: translate(-50%, 0%);
                 }
+
+p{
+    display:grid;
+}
+
+.desplegable {
+    position: absolute;
+    margin-top: 124.5%;
+    margin-left: -100%;
+}
+.des {
+    background: #fff;
+    border-radius: 7PX;
+    width: 177px;
+    height: 51px;
+    border: none;
+}
+
+/*.titul {
+    text-shadow: 0 0 0;
+    text-decoration: none;
+    color: #fff;
+    position: absolute;
+    left: 8%;
+    top: 10%;
+    color: #333745;
+    font-size: 1.2rem;
+    transition: all 0.4s ease-in-out;
+    font-family: "Open Sans", sans-serif;
+}
+*/
+select {
+    text-shadow: 0 0 0;
+    text-decoration: none;
+    color: #fff;
+    position: absolute;
+    top: 2%;
+    color: #333745;
+ 
+    font-size: 0.9rem;
+    transition: all 0.4s ease-in-out;
+    font-family: "Open Sans", sans-serif;
+}
 
 @-webkit-keyframes text-hover {
     0% {

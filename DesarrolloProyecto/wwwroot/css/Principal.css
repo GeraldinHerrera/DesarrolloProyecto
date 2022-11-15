@@ -57,6 +57,17 @@ input {
     border: aliceblue;
 }
 
+.btnS {
+    background-color: darkgray;
+    border-radius: 50px;
+    height: -2px;
+    height: 6%;
+    margin-left: 0%;
+    margin-top: 18%;
+    zoom: 130%;
+}
+
+
 
 
 

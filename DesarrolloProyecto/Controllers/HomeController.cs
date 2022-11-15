@@ -19,7 +19,7 @@ namespace DesarrolloProyecto.Controllers
 
         public IActionResult Index()
         {
-            //List<Categorium> lista = _TODOYAContext.Categoria.ToList();
+            List<Categorium> lista = _TODOYAContext.Categoria.ToList();
             return View();
         }
 
@@ -33,6 +33,11 @@ namespace DesarrolloProyecto.Controllers
         }
 
         public IActionResult Compras()
+        {
+            return View();
+        }
+
+        public IActionResult Mapa()
         {
             return View();
         }

@@ -4,24 +4,59 @@
 @{
 }
 <head>
-    <link  rel="stylesheet" href="/css/EstilosCompras.css"/>
+    <link rel="stylesheet" href="/css/EstilosCompras.css" />
 </head>
 
 
 <section class="pricing-table">
 
-  <div class="card">
-    <h6 class="type">COMPRA</h6>
-    <div class="price"><span>$</span>50.000</div>
-    <h5 class="plan">Productos</h5>
-    <ul class="details">
-      <li>Cerveza Poker </li>
-      <li>Energizante Moster</li>
-      <li>Lentejas</li>
-    </ul>
-    <div class="buy-button">
-      <h3 class="btn">Cancelar</h3>
+    <div class="card">
+        <h6 class="type">COMPRA</h6>
+        <div class="price"><span>$</span>34.400</div>
+        <h5 class="plan">Productos</h5>
+        <ul class="details">
+            <li>
+                Cerveza Corona
+                <p>$15.750</p>
+            </li>
+
+            <li>
+                Gaseosa CocaCola x2
+                <p>$13.650</p>
+            </li>
+            <li>
+                Combo Comida
+                <p>$5.000</p>
+            </li>
+        </ul>
+        <div class="buy-button" onclick="cancelar()">
+            <h3 class="btn">Cancelar</h3>
+        </div>
+        <div class="desplegable">
+            @*  <h3 class="btn">Medios de pago</h3>*@
+            <select name="mediosPago" class="des" id="kc" onchange="nequi()">
+                <option selected disabled>
+                    MEDIOS DE PAGO
+                </option>
+                <option  value="https://www.pse.com.co/persona">Nequi </option>
+                <option value="https://www.pse.com.co/persona">Daviplata</option>
+                <option value="https://www.itau.co/web/guest/index">Banco Itau</option>
+                <option value="https://www.bancolombia.com/personas">Bancolombia</option>
+                <option value="https://www.avvillas.com.co/wps/portal/avvillas/nuestro-banco/sala-prensa">Banco Av Villas</option>
+
+            </select>
+        </div>
     </div>
-  </div>
 
 </section>
+
+<script>
+    function nequi() {
+       var xe = document.getElementById("kc").value;
+        location.href = xe;
+    }
+
+function cancelar() {
+      window.location.replace("Comercio");
+}
+</script>

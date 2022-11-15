@@ -22,7 +22,7 @@
     </div>
 
     <div class="Titulo">
-        <p>Ingresar mi ubicacion</p>
+        <p onclick="mapa()">Ingresar mi ubicacion</p>
         <img  class="ubi"  src="https://cdn-icons-png.flaticon.com/32/1483/1483336.png" />
     </div>
     <div class="buscador">
@@ -157,10 +157,14 @@
  
     for (var i = 0; i < imagenes.length; i++) {
         console.log(i);
+        var suma= document.createElement("button")
         var div2 = document.createElement("div");
         var img = document.createElement("img");
         img.className = "imagenes";
         img.src = imagenes[i];
+        suma.type='button';
+        suma.innerText='+';
+        suma.className= "btnS";
  
 
         div2.className="titulosDiv";
@@ -170,9 +174,13 @@
         div2.appendChild(img);
         div2.appendChild(p);
         div.appendChild(div2);
+        div.appendChild(suma);
         //div.appendChild(tit);
-      
-    
+
+        suma.onclick= function(){
+            alert("Producto agregado correctamente");
+            console.log(suma);
+        }
 
     document.getElementById("kl").innerHTML = localStorage.user;
 
@@ -183,6 +191,11 @@
         $('.titulosDiv').css({
            display:'none'
         })
+
+        $('.btnS').css({
+            display: 'none'
+        })
+
 
         //$('.titulosDivA').css({
         //    display: 'block'
@@ -227,20 +240,18 @@
             div2a.appendChild(pA);
             div.appendChild(div2a);
 
-
-
             document.getElementById("kl").innerHTML = localStorage.user;
 
         }
-
-
-        
        
     }
 
     function bebidas(){
         $('.titulosDiv').css({
            display:'none'
+        })
+        $('.btnS').css({
+            display: 'none'
         })
 
         //$('.titulosDivA').css({
@@ -292,8 +303,13 @@
     }
 
     function Compras(){
-        alert("Entro");
      window.location.replace("Compras");
+
     }
+function mapa() {
+     window.location.replace("Mapa");
+}
+
+
 
 </script>
